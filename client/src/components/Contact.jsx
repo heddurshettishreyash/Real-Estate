@@ -11,7 +11,7 @@ export default function Contact({ listing }) {
   useEffect(() => {
     const fetchLandlord = async () => {
       try {
-        const res = await fetch(`/api/user/${listing.userRef}`);
+        const res = await fetch(`https://real-estate-wuda.vercel.app/api/user/${listing.userRef}`);
         const data = await res.json();
         setLandlord(data);
       } catch (error) {
@@ -40,10 +40,10 @@ export default function Contact({ listing }) {
           ></textarea>
 
           <Link
-          to={`mailto:${landlord.email}?subject=Regarding ${listing.name}&body=${message}`}
-          className='bg-slate-700 text-white text-center p-3 uppercase rounded-lg hover:opacity-95'
+            to={`mailto:${landlord.email}?subject=Regarding ${listing.name}&body=${message}`}
+            className='bg-slate-700 text-white text-center p-3 uppercase rounded-lg hover:opacity-95'
           >
-            Send Message          
+            Send Message
           </Link>
         </div>
       )}
