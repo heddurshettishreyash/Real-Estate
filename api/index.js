@@ -9,7 +9,7 @@ import path from 'path';
 dotenv.config();
 
 mongoose
-  .connect(process.env.MONGO)
+  .connect("mongodb://localhost:27017/test")
   .then(() => {
     console.log('Connected to MongoDB!');
   })
@@ -17,7 +17,7 @@ mongoose
     console.log(err);
   });
 
-  const __dirname = path.resolve();
+const __dirname = path.resolve();
 
 const app = express();
 
